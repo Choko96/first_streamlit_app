@@ -40,22 +40,3 @@ try:
             back_from_function =  get_fruity_vice_data(fruit_choice)
             streamlit.write('The user entered', fruit_choice)
             streamlit.dataframe(back_from_function)
-
-
-
-fruit_choiceb = streamlit.text_input('What fruit would you like to add?')
-
-
-
-my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-
-my_cur = my_cnx.cursor()
-
-my_cur.execute("select * from fruit_load_list where ")
-
-my_data_row = my_cur.fetchall()
-
-streamlit.text("The fruit list contains: ")
-
-#streamlit.text(my_data_row)
-streamlit.dataframe(my_data_row)
