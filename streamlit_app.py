@@ -24,7 +24,8 @@ import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
 streamlit.text(fruityvice_response.json())
 
-my_cnx = snowflake.connector.connect(**streamlit.secrets[snowflake])
+import snowflake.connector
+my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 
 my_cur = my_cnx.cursor()
 
