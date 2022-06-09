@@ -42,7 +42,6 @@ try:
             streamlit.dataframe(back_from_function)
 
 
-streamlit.text(fruityvice_response.json())
 
 fruit_choiceb = streamlit.text_input('What fruit would you like to add?')
 
